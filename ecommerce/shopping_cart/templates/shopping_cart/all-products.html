@@ -1,11 +1,115 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "shopping_cart/product-list.css" %}">
+{% endblock  %}
 
 {% block title %}
     All Products
 {% endblock  %}
 
 {% block content %}
-    <h1>All content</h1>
+    <div class="productscontain">
+        <section class="products">
+            <div class="product">
+                <img src="{% static "shopping_cart/images/headphones.jpg" %}" alt="headphone">
+                <h1>Headphones</h1>
+                <hr>
+                <div class="productbotcontain">
+                    <div>
+                        <button>Add to Cart</button>
+                        <button>View</button>
+                    </div>
+                    <span>$179.99</span>
+                </div>
+            </div>
+            <div class="product">
+                <img src="{% static "shopping_cart/images/headphones.jpg" %}" alt="headphone">
+                <h1>Headphones</h1>
+                <hr>
+                <div class="productbotcontain">
+                    <div>
+                        <button>Add to Cart</button>
+                        <button>View</button>
+                    </div>
+                    <span>$179.99</span>
+                </div>
+            </div>
+            <div class="product">
+                <img src="{% static "shopping_cart/images/headphones.jpg" %}" alt="headphone">
+                <h1>Headphones</h1>
+                <hr>
+                <div class="productbotcontain">
+                    <div>
+                        <button>Add to Cart</button>
+                        <button>View</button>
+                    </div>
+                    <span>$179.99</span>
+                </div>
+            </div>
+            <div class="product">
+                <img src="{% static "shopping_cart/images/headphones.jpg" %}" alt="headphone">
+                <h1>Headphones</h1>
+                <hr>
+                <div class="productbotcontain">
+                    <div>
+                        <button>Add to Cart</button>
+                        <button>View</button>
+                    </div>
+                    <span>$179.99</span>
+                </div>
+            </div>
+            <div class="product">
+                <img src="{% static "shopping_cart/images/headphones.jpg" %}" alt="headphone">
+                <h1>Headphones</h1>
+                <hr>
+                <div class="productbotcontain">
+                    <div>
+                        <button>Add to Cart</button>
+                        <button>View</button>
+                    </div>
+                    <span>$179.99</span>
+                </div>
+            </div>
+            <div class="product">
+                <img src="{% static "shopping_cart/images/headphones.jpg" %}" alt="headphone">
+                <h1>Headphones</h1>
+                <hr>
+                <div class="productbotcontain">
+                    <div>
+                        <button>Add to Cart</button>
+                        <button>View</button>
+                    </div>
+                    <span>$179.99</span>
+                </div>
+            </div>
+            <div class="product">
+                <img src="{% static "shopping_cart/images/headphones.jpg" %}" alt="headphone">
+                <h1>Headphones</h1>
+                <hr>
+                <div class="productbotcontain">
+                    <div>
+                        <button>Add to Cart</button>
+                        <button>View</button>
+                    </div>
+                    <span>$179.99</span>
+                </div>
+            </div>
+            <div class="product">
+                <img src="{% static "shopping_cart/images/headphones.jpg" %}" alt="headphone">
+                <h1>Headphones</h1>
+                <hr>
+                <div class="productbotcontain">
+                    <div>
+                        <button>Add to Cart</button>
+                        <button>View</button>
+                    </div>
+                    <span>$179.99</span>
+                </div>
+            </div>
+        </section>
+    </div>
 {% endblock %}
 
 
