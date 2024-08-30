@@ -1,6 +1,6 @@
 .productscontain{
     display: flex;
-    border: 1px solid black;
+    
     justify-content: center;
     align-items: center;
     margin-top: 7%;
@@ -9,9 +9,10 @@
 .products{
     display: flex;
     width: 70%;
-    border: 1px solid black;
+    
     flex-wrap: wrap;
-    gap: 2rem;
+    column-gap: 2rem;
+    row-gap: 1rem;
     background-color: rgb(234, 234, 234);
 }   
 .product{
