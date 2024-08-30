@@ -25,8 +25,14 @@
     align-items: center;
     margin-right: 1rem;
 }
-.navshopping{
+.navshopping a{
     display: flex;
+    color: black;
+    text-decoration: none;
+}
+.navshopping a:hover, 
+.navshopping a:active{
+    cursor: pointer;
 }
 .navshopping div{
     display: flex;

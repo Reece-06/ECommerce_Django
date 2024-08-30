@@ -7,10 +7,12 @@
     <section class="navright">
         <button>Login</button>
         <div class="navshopping">
-            <img src="{% static "images/shopping-cart.png" %}" alt="Sopping Cart">
-            <div>
-                <span>2</span>
-            </div>
+            <a href="{% url "cart" %}">
+                <img src="{% static "images/shopping-cart.png" %}" alt="Sopping Cart">
+                <div>
+                    <span>2</span>
+                </div>
+            </a>
         </div>
     </section>
 </nav>

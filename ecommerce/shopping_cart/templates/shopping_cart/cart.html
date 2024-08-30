@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load static %}
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "shopping_cart/cart.css" %}">
+{% endblock  %}
+{% block title %}
+    Customer Cart
+{% endblock  %}
+{% block content %}
+    <section class="cart">
+        <section class="cartupper">
+            <button class="cartback">
+                <img src="{% static "shopping_cart/images/back.png" %}" alt="Back Button">
+                <span>Continue Shopping</span>
+            </button>
+            <hr>
+            <div class="cartinfo">
+                <div>
+                    <span>Items: 4</span>
+                    <span>Total:$70.96</span>
+                </div>
+                <button class="cartcheckout">Checkout</button>
+            </div>
+        </section>
+        <section class="cartlower">
+            <div class="cartlowertable">
+                <div class="cartlowerlabels"> 
+                   <h2 class="cartlowerlabel"></h2>
+                   <h2 class="cartlowerlabel">Item</h2>
+                   <h2 class="cartlowerlabel">Price</h2>
+                   <h2 class="cartlowerlabel">Quantity</h2> 
+                   <h2 class="cartlowerlabel">Total</h2>   
+                </div>
+                <hr>
+                <div class="cartloweralldata">
+                    <div class="cartlowerdata cartlowerprodimg">
+                        <img src="{% static "shopping_cart/images/sourcecode.jpg" %}" alt="Mountain of Olive's Book Picture">
+                    </div>
+                    <h3 class="cartlowerdata">Mountain of Olive's Book</h3>
+                    <h3 class="cartlowerdata">$14.99</h3>
+                    <div class="cartlowerdata cartlowerqty">
+                        <h3>3</h3>
+                        <div class="cartlowerupdown">
+                            <img src="{% static "shopping_cart/images/up.png" %}" alt="Up Quantity">
+                            <img src="{% static "shopping_cart/images/down.png" %}" alt="Down Quantity">
+                        </div>
+                    </div>
+                    <h3 class="cartlowerdata">$44.97</h3>
+                </div>
+                <hr>
+            </div>
+        </section> 
+    </section>
+{% endblock  %}
