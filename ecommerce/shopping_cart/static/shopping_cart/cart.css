@@ -63,8 +63,16 @@
     display: flex;
     
 }
+.cartlowerlabel{
+    font-size: 1.5rem;
+    font-weight: normal;
+}
 .cartlowerlabel, .cartlowerdata{
     flex: 1;
+}
+.cartlowertxt{
+    font-weight: normal;
+    font-size: 1rem;
 }
 .cartloweralldata{
     display: flex;
