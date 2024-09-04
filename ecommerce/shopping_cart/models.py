@@ -48,21 +48,24 @@ class Product(models.Model):
     def __str__(self):
         return self.product_name
 
+class CustomerCart(models.Model):
+    #cart_id = models.SmallAutoField()
+    user = models.OneToOneField(Customer, on_delete=models.CASCADE)
+    
+
+    def __str__(self):
+        return f"Cart of {self.user.getfullname()}"
+
 class OrderItem(models.Model):
     #order_id = models.SmallAutoField()
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     date_ordered = models.DateField(auto_now=True, editable=True)
     item_quantity = models.IntegerField() 
+    cart = models.ForeignKey(CustomerCart, on_delete=models.CASCADE, null=True)
     
     def __str__(self):
         return f"{self.product.product_name} (Qty: {self.item_quantity})"
 
-class CustomerCart(models.Model):
-    #cart_id = models.SmallAutoField()
-    user = models.OneToOneField(Customer, on_delete=models.CASCADE)
-    orders = models.ForeignKey(OrderItem, on_delete=models.PROTECT)
 
-    def __str__(self):
-        return f"Cart of {self.user.getfullname()}"
 
 

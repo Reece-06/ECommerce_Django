@@ -12,102 +12,20 @@
 {% block content %}
     <div class="productscontain">
         <section class="products">
-            <div class="product">
-                <img src="{% static "shopping_cart/images/headphones.jpg" %}" alt="headphone">
-                <h1>Headphones</h1>
-                <hr>
-                <div class="productbotcontain">
-                    <div>
-                        <button>Add to Cart</button>
-                        <button>View</button>
+            {% for product in products %}
+                <div class="product">
+                    <img src="{% static "shopping_cart/images/"|add:product.image  %}" alt={{ product.product_name }}>
+                    <h1>{{ product.product_name }}</h1>
+                    <hr>
+                    <div class="productbotcontain">
+                        <div>
+                            <button>Add to Cart</button>
+                            <button>View</button>
+                        </div>
+                        <span>₱{{ product.price }}</span>
                     </div>
-                    <span>$179.99</span>
                 </div>
-            </div>
-            <div class="product">
-                <img src="{% static "shopping_cart/images/headphones.jpg" %}" alt="headphone">
-                <h1>Headphones</h1>
-                <hr>
-                <div class="productbotcontain">
-                    <div>
-                        <button>Add to Cart</button>
-                        <button>View</button>
-                    </div>
-                    <span>$179.99</span>
-                </div>
-            </div>
-            <div class="product">
-                <img src="{% static "shopping_cart/images/headphones.jpg" %}" alt="headphone">
-                <h1>Headphones</h1>
-                <hr>
-                <div class="productbotcontain">
-                    <div>
-                        <button>Add to Cart</button>
-                        <button>View</button>
-                    </div>
-                    <span>$179.99</span>
-                </div>
-            </div>
-            <div class="product">
-                <img src="{% static "shopping_cart/images/headphones.jpg" %}" alt="headphone">
-                <h1>Headphones</h1>
-                <hr>
-                <div class="productbotcontain">
-                    <div>
-                        <button>Add to Cart</button>
-                        <button>View</button>
-                    </div>
-                    <span>$179.99</span>
-                </div>
-            </div>
-            <div class="product">
-                <img src="{% static "shopping_cart/images/headphones.jpg" %}" alt="headphone">
-                <h1>Headphones</h1>
-                <hr>
-                <div class="productbotcontain">
-                    <div>
-                        <button>Add to Cart</button>
-                        <button>View</button>
-                    </div>
-                    <span>$179.99</span>
-                </div>
-            </div>
-            <div class="product">
-                <img src="{% static "shopping_cart/images/headphones.jpg" %}" alt="headphone">
-                <h1>Headphones</h1>
-                <hr>
-                <div class="productbotcontain">
-                    <div>
-                        <button>Add to Cart</button>
-                        <button>View</button>
-                    </div>
-                    <span>$179.99</span>
-                </div>
-            </div>
-            <div class="product">
-                <img src="{% static "shopping_cart/images/headphones.jpg" %}" alt="headphone">
-                <h1>Headphones</h1>
-                <hr>
-                <div class="productbotcontain">
-                    <div>
-                        <button>Add to Cart</button>
-                        <button>View</button>
-                    </div>
-                    <span>$179.99</span>
-                </div>
-            </div>
-            <div class="product">
-                <img src="{% static "shopping_cart/images/headphones.jpg" %}" alt="headphone">
-                <h1>Headphones</h1>
-                <hr>
-                <div class="productbotcontain">
-                    <div>
-                        <button>Add to Cart</button>
-                        <button>View</button>
-                    </div>
-                    <span>$179.99</span>
-                </div>
-            </div>
+            {% endfor %}     
         </section>
     </div>
 {% endblock %}
