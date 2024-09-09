@@ -16,8 +16,8 @@
             <hr>
             <div class="cartinfo">
                 <div>
-                    <span>Items: 4</span>
-                    <span>Total:$70.96</span>
+                    <span>Items: {{ items_count }}</span>
+                    <span>Total:$ {{ items_total }}</span>
                 </div>
                 <button class="cartcheckout">Checkout</button>
             </div>
@@ -32,22 +32,24 @@
                    <h2 class="cartlowerlabel">Total</h2>   
                 </div>
                 <hr>
-                <div class="cartloweralldata">
-                    <div class="cartlowerdata cartlowerprodimg">
-                        <img src="{% static "shopping_cart/images/sourcecode.jpg" %}" alt="Mountain of Olive's Book Picture">
-                    </div>
-                    <h3 class="cartlowerdata cartlowertxt">Mountain of Olive's Book</h3>
-                    <h3 class="cartlowerdata cartlowertxt">$14.99</h3>
-                    <div class="cartlowerdata cartlowerqty">
-                        <h3 class="cartlowertxt">3</h3>
-                        <div class="cartlowerupdown">
-                            <img src="{% static "shopping_cart/images/up.png" %}" alt="Up Quantity">
-                            <img src="{% static "shopping_cart/images/down.png" %}" alt="Down Quantity">
+                {% for item in segregated_items %}
+                    <div class="cartloweralldata">
+                        <div class="cartlowerdata cartlowerprodimg">
+                            <img src="{% static "shopping_cart/images/"|add:item.item_image %}" alt={{ item.item_name }}>
                         </div>
+                        <h3 class="cartlowerdata cartlowertxt">{{ item.item_name }}</h3>
+                        <h3 class="cartlowerdata cartlowertxt">{{ item.item_price }}</h3>
+                        <div class="cartlowerdata cartlowerqty">
+                            <h3 class="cartlowertxt">{{ item.item_qty }}</h3>
+                            <div class="cartlowerupdown">
+                                <img src="{% static "shopping_cart/images/up.png" %}" alt="Up Quantity">
+                                <img src="{% static "shopping_cart/images/down.png" %}" alt="Down Quantity">
+                            </div>
+                        </div>
+                        <h3 class="cartlowerdata cartlowertxt">{{ item.item_total }}</h3>
                     </div>
-                    <h3 class="cartlowerdata cartlowertxt">$44.97</h3>
-                </div>
-                <hr>
+                    <hr>
+                {% endfor %}
             </div>
         </section> 
     </section>
