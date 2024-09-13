@@ -9,7 +9,7 @@ class CheckoutView(View):
     def get(self, request):
         form = ShippingInfoForm()
         
-        return render("request", "/checkout/checkout.html", {
+        return render(request, "checkout/checkout.html", {
             "form": form, 
 
         })
@@ -20,6 +20,6 @@ class CheckoutView(View):
             form.save()
             HttpResponseRedirect(reverse("all-products"))
 
-        return render("request", "/checkout/checkout.html", {
+        return render(request, "checkout/checkout.html", {
             "form": form,
         }) 
