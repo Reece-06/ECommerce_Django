@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Checkout{% endblock  %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "checkout/checkout.css" %}">
+{% endblock  %}
+
+{% block content %}
+    <section class="checkout">
+        <section class="checkoutform">
+            <hr>
+            <span>Shipping Information</span>
+            <hr>
+            <form action="">
+                {% csrf_token %}
+                {% for field in form %}
+                    <div>
+                        {{ field }}
+                        {{ field.errors }}
+                    </div>
+                {% endfor %}
+            </form>
+            <hr>
+            <button>Continue</button>
+        </section>
+        <section class="checkoutform">
+            <button>
+                <img src="" alt="">
+                <span>Back to Cart</span>
+            </button>
+            <hr>
+            <h1>Order Summary</h1>
+            <hr>
+            <div>
+                <img src="" alt="">
+                <span>Mountain of Olive's Book</span>
+                <span>$14.00</span>
+                <span>x3</span>
+            </div>
+            <hr>
+            <p>Items: 3</p>
+            <p>Total: $44.20</p>
+        </section>
+    </section>
+{% endblock  %}

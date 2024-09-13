@@ -44,11 +44,25 @@
     border: 1px solid rgb(12, 12, 58);
     background-color: rgb(12, 12, 58);
     color: white;
+    transition: border-color 0.5s, background-color 0.5s;
     
+}
+.productbotcontain button:nth-child(1):hover, 
+.productbotcontain button:nth-child(1):active{
+    border-color: rgb(5, 5, 26);
+    background-color: rgb(5, 5, 26);
 }
 .productbotcontain button:nth-child(2){
     border: 1px solid rgb(12, 12, 58);
     background-color: white;
+    transition: border-color 0.5s, background-color 0.5s, color 0.5s;
+}
+.productbotcontain button:nth-child(2):hover, 
+.productbotcontain button:nth-child(2):active{
+    border-color: rgb(5, 5, 26);
+    background-color: rgb(5, 5, 26);
+    color: white;
+
 }
 
 .productbotcontain{
