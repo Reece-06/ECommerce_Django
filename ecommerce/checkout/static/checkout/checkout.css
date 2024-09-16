@@ -1,0 +1,76 @@
+.checkout{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 7%;
+    gap: 1rem;
+}
+.checkoutsection{
+    padding: 0.5rem;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    height: fit-content;
+}
+
+.checkoutform > *, .checkoutorders > *{
+    margin-bottom: 1rem;
+}
+.checkoutform > *:last-child, .checkoutorders > *:last-child {
+    margin-bottom: 0;
+}
+.checkoutform button{
+    width: 100%;
+    padding: 0.5rem;
+    background-color: rgb(12, 12, 58);
+    color: white;
+    border-color: rgb(12, 12, 58);
+    border-style: none;
+}
+.checkoutform form{
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+
+.checkoutform input{
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+.checkoutform span, .checkoutform button{
+    font-size: 1rem;
+}
+.back{
+    width: 0.8rem;
+}
+.checkoutorders button{
+    padding: 0.5rem;
+    background-color: white;
+    border: 1px solid black;
+
+}
+.item{
+    width: 8rem;
+}
+.checkoutorder{
+    display: grid;
+    grid-template-columns: repeat(2, 2fr) repeat(2, 1fr);
+}
+.checkoutorders p{
+    font-weight: bold;
+}
+.checkoutorders h1{
+    font-size: 2rem;
+}
+.backbutton a{
+    text-decoration: none;
+    color: black;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+

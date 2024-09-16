@@ -8,10 +8,10 @@
 
 {% block content %}
     <section class="checkout">
-        <section class="checkoutform">
-            <hr>
+        <section class="checkoutform checkoutsection">
+            <hr class="checkoutline">
             <span>Shipping Information</span>
-            <hr>
+            <hr class="checkoutline">
             <form action="">
                 {% csrf_token %}
                 {% for field in form %}
@@ -21,24 +21,32 @@
                     </div>
                 {% endfor %}
             </form>
-            <hr>
+            <hr class="checkoutline">
             <button>Continue</button>
         </section>
-        <section class="checkoutform">
-            <button>
-                <img src="" alt="">
-                <span>Back to Cart</span>
+        <section class="checkoutorders checkoutsection">
+            <button class="backbutton">
+                <a href="{% url "cart" %}">
+                    <img class="back" src="{% static "shopping_cart/images/back.png" %}" alt="Back button">
+                    <span>Back to Cart</span>
+                </a>
             </button>
-            <hr>
+            <hr class="checkoutline">
             <h1>Order Summary</h1>
-            <hr>
-            <div>
-                <img src="" alt="">
+            <hr class="checkoutline">
+            <div class="checkoutorder">
+                <img class="item" src="{% static "shopping_cart/images/book.jpg" %}" alt="Pic">
                 <span>Mountain of Olive's Book</span>
                 <span>$14.00</span>
                 <span>x3</span>
             </div>
-            <hr>
+            <div class="checkoutorder">
+                <img class="item" src="{% static "shopping_cart/images/book.jpg" %}" alt="Pic">
+                <span>Mountain of Olive's Book</span>
+                <span>$14.00</span>
+                <span>x3</span>
+            </div>
+            <hr class="checkoutline">
             <p>Items: 3</p>
             <p>Total: $44.20</p>
         </section>

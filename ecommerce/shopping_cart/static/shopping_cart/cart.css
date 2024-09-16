@@ -15,14 +15,22 @@
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     background-color: white;
 }
-.cartback{
+.cartback {
+    width: fit-content;
+    border-style: none;
+}
+.cartback a{
     width: fit-content;
     padding: 0.5rem;
-    border-radius: 5px;
     border: 1px solid rgb(12, 12, 58);
     display: flex;
     gap: 0.5rem;
+    background-color: white;
+    text-decoration: none;
+    color: black;
 }
+
+
 .cartupper hr{
     background-color: black;
     width: 100%;
@@ -46,6 +54,10 @@
     font-size: 20px;
     border-radius: 5px;
 
+}
+.cartcheckout a{
+    text-decoration: none;
+    color: white;
 }
 .cartback img{
     width: 10px;

@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import *
 from django.http import JsonResponse, HttpResponseRedirect
 from django.urls import reverse
@@ -97,5 +97,7 @@ def updateItem(request):
         product = Product.objects.get(pk=productId)
         OrderItem.objects.create(product=product, item_quantity=1, cart=reece_cart)
     
-    redirect_path = reverse('all-products')
-    return HttpResponseRedirect(redirect_path)
+    #redirect_path = reverse('all-products')
+    #return HttpResponseRedirect(redirect_path)
+    #return redirect('/cart/')
+    return JsonResponse('Item was added', safe=False)

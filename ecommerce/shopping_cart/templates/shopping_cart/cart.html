@@ -10,8 +10,10 @@
     <section class="cart">
         <section class="cartupper">
             <button class="cartback">
-                <img src="{% static "shopping_cart/images/back.png" %}" alt="Back Button">
-                <span>Continue Shopping</span>
+                <a href="{% url "all-products" %}">
+                    <img src="{% static "shopping_cart/images/back.png" %}" alt="Back Button">
+                    <span>Continue Shopping</span>
+                </a>  
             </button>
             <hr>
             <div class="cartinfo">
@@ -19,7 +21,7 @@
                     <span>Items: {{ items_count }}</span>
                     <span>Total:$ {{ items_total }}</span>
                 </div>
-                <button class="cartcheckout">Checkout</button>
+                <button class="cartcheckout"><a href="{% url "checkout" %}">Checkout</a></button>
             </div>
         </section>
         <section class="cartlower">
