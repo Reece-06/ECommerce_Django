@@ -25,7 +25,8 @@ def SegregateOrderedItems(ordered_items):
                         "item_name": product_name, 
                         "item_price": product_price, 
                         "item_total": product_total, 
-                        "item_qty": product_qty
+                        "item_qty": product_qty,
+                        "item_product_id": item.product.id
                     }
                     isfirst = False
 
@@ -96,7 +97,12 @@ def updateItem(request):
     if action == 'add':
         product = Product.objects.get(pk=productId)
         OrderItem.objects.create(product=product, item_quantity=1, cart=reece_cart)
-    
+    else:
+        #product = Product.objects.get(pk=productId)
+        lastitem = OrderItem.objects.filter(product_id=productId).order_by("-date_ordered").first()
+        if lastitem != None:
+            lastitem.delete()
+
     #redirect_path = reverse('all-products')
     #return HttpResponseRedirect(redirect_path)
     #return redirect('/cart/')

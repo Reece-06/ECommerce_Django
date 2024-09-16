@@ -19,7 +19,7 @@
             <div class="cartinfo">
                 <div>
                     <span>Items: {{ items_count }}</span>
-                    <span>Total:$ {{ items_total }}</span>
+                    <span>Total: ₱{{ items_total }}</span>
                 </div>
                 <button class="cartcheckout"><a href="{% url "checkout" %}">Checkout</a></button>
             </div>
@@ -40,15 +40,15 @@
                             <img src="{% static "shopping_cart/images/"|add:item.item_image %}" alt={{ item.item_name }}>
                         </div>
                         <h3 class="cartlowerdata cartlowertxt">{{ item.item_name }}</h3>
-                        <h3 class="cartlowerdata cartlowertxt">{{ item.item_price }}</h3>
+                        <h3 class="cartlowerdata cartlowertxt">₱{{ item.item_price }}</h3>
                         <div class="cartlowerdata cartlowerqty">
                             <h3 class="cartlowertxt">{{ item.item_qty }}</h3>
                             <div class="cartlowerupdown">
-                                <img src="{% static "shopping_cart/images/up.png" %}" alt="Up Quantity">
-                                <img src="{% static "shopping_cart/images/down.png" %}" alt="Down Quantity">
+                                <img data-product={{item.item_product_id}} data-action="add" class="update-cart" src="{% static "shopping_cart/images/up.png" %}" alt="Up Quantity">
+                                <img data-product={{item.item_product_id}} data-action="subtract" class="update-cart" src="{% static "shopping_cart/images/down.png" %}" alt="Down Quantity">
                             </div>
                         </div>
-                        <h3 class="cartlowerdata cartlowertxt">{{ item.item_total }}</h3>
+                        <h3 class="cartlowerdata cartlowertxt">₱{{ item.item_total }}</h3>
                     </div>
                     <hr>
                 {% endfor %}

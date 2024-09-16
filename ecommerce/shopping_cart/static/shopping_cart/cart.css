@@ -104,10 +104,12 @@
     display: flex;
     flex-direction: column;
     height: fit-content;
-
+    cursor: pointer;
 }
+
 .cartlowerprodimg img{
     width: 10rem;
+    
 }
 .cartlowerupdown img:first-child{
     width: 10px;
