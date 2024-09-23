@@ -34,21 +34,17 @@
             <hr class="checkoutline">
             <h1>Order Summary</h1>
             <hr class="checkoutline">
-            <div class="checkoutorder">
-                <img class="item" src="{% static "shopping_cart/images/book.jpg" %}" alt="Pic">
-                <span>Mountain of Olive's Book</span>
-                <span>$14.00</span>
-                <span>x3</span>
-            </div>
-            <div class="checkoutorder">
-                <img class="item" src="{% static "shopping_cart/images/book.jpg" %}" alt="Pic">
-                <span>Mountain of Olive's Book</span>
-                <span>$14.00</span>
-                <span>x3</span>
-            </div>
+            {% for item in segregated_items %}
+                <div class="checkoutorder">
+                    <img class="item" src="{% static "shopping_cart/images/"|add:item.item_image %}" alt="Pic">
+                    <span>{{ item.item_name }}</span>
+                    <span>{{ item.item_price }}</span>
+                    <span>x{{ item.item_qty }}</span>
+                </div>
+            {% endfor %}
             <hr class="checkoutline">
-            <p>Items: 3</p>
-            <p>Total: $44.20</p>
+            <p>Items: {{ items_count }}</p>
+            <p>Total: ₱{{ items_total }}</p>
         </section>
     </section>
 {% endblock  %}
